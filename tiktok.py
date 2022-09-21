@@ -21,14 +21,16 @@ def get_data(hashtag):
         
         print("tag.videos : ",tag.videos()) 
         for video in tag.videos():
-            print("inside")
+            #print("inside")
             #print('Video id : ',video.author)
-            print('Video dict : ',video.as_dict)
-            #first=video.as_dict
+            #print('Video dict : ',video.as_dict)
+            ls.append(video.as_dict)
             #break
         
-        print('keys : ',video.author,video.id)
-        print(video.as_dict)
+        #print('keys : ',video.author,video.id)
+        #print(video.as_dict)
+        
+        print(ls[o])
         
         
         #print(api)
