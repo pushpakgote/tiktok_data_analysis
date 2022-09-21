@@ -19,9 +19,13 @@ def get_data(hashtag):
         print('Api hashtag :', tag.info_full())
         print('Tag info : ',tag.info())
         
-        print("tag.videos : ",tag.videos())
+        print("tag.videos : ",tag.videos()[0] )
         for video in tag.videos():
             print('Video id : ',video.as_dict)
+            first=video.as_dict
+            break
+        
+        st.write(first)
         
         #print(api)
         for trending_video in api.trending.videos(count=50):
