@@ -43,11 +43,12 @@ def get_data(hashtag):
         print("Over")
     #ls.append(hashtag)
     
+    ls=[]
     #lines = ['Readme', 'How to write text files in Python']
-    #with open('test.txt', 'w') as f:
-    #    for line in ls:
-    #        f.write(line)
-    #        f.write('\n')
+    with open('test.txt', 'w') as f:
+        for line in ls:
+            f.write(line)
+            f.write('\n')
     
 
 
