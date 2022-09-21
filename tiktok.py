@@ -23,8 +23,8 @@ def get_data(hashtag):
         for video in tag.videos():
             print("inside")
             #print('Video id : ',video.author)
-            #print('Video dict : ',video.as_dict)
-            #print(type(video.as_dict))
+            print('Video dict : ',video.as_dict)
+            print(type(video.as_dict))
             ls.append(video.as_dict)
             #break
         
