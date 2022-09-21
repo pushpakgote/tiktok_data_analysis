@@ -22,10 +22,10 @@ def get_data(hashtag):
         print("tag.videos : ",tag.videos()) 
         for video in tag.videos():
             print("inside")
-            print('Video id : ',video.author)
-            #print('keys : ',video.as_dict.keys())
+            #print('Video id : ',video.author)
+            print('Video dict : ',video.as_dict)
             #first=video.as_dict
-            break
+            #break
         
         print('keys : ',video.author,video.id)
         print(video.as_dict)
