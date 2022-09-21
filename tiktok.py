@@ -22,9 +22,11 @@ def get_data(hashtag):
         print("tag.videos : ",tag.videos()) 
         for video in tag.videos():
             print('Video id : ',video.as_dict)
+            print('keys : ',video.as_dict.keys())
             first=video.as_dict
             break
-        print('keys : ',first.keys)
+        
+        #print('keys : ',first.keys)
         
         
         #print(api)
