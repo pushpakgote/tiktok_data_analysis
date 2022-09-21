@@ -6,7 +6,8 @@ hashtag=st.text_input('Search hashtags . . .',value="")
 
 if st.button('Get Data'):
     st.write(hashtag)
-    call(['python','tiktok.py',hashtag])
+    call(hashtag.split(' '))
+    #call(['python','tiktok.py',hashtag])
     with open('test.txt') as f:
         contents = f.read()
     st.write(contents)
