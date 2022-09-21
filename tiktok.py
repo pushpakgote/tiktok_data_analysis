@@ -30,7 +30,7 @@ def get_data(hashtag):
         #print('keys : ',video.author,video.id)
         #print(video.as_dict)
         
-        print(ls[o])
+        print(ls[0])
         
         
         #print(api)
