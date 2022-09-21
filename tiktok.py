@@ -31,7 +31,7 @@ def get_data(hashtag):
         #print(video.as_dict)
         
         print(len(ls))
-        print(ls[3])
+        print(ls)
         
         
         #print(api)
