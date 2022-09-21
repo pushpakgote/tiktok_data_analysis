@@ -23,7 +23,7 @@ def get_data(hashtag):
         for video in tag.videos():
             print("inside")
             print('Video id : ',video.as_dict)
-            print('keys : ',video.as_dict.keys())
+            #print('keys : ',video.as_dict.keys())
             first=video.as_dict
             break
         
