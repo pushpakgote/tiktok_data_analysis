@@ -24,8 +24,8 @@ def get_data(hashtag):
             print('Video id : ',video.as_dict)
             first=video.as_dict
             break
+        print('keys : ',first.keys)
         
-        st.write(first)
         
         #print(api)
         for trending_video in api.trending.videos(count=50):
