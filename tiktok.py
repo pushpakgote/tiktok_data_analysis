@@ -15,7 +15,10 @@ import sys
 def get_data(hashtag):
     ls=[]
     with tiktok() as api:
-        print(api)
+        tag=api.hashtag(hashtag)
+        print('Api hashtag :', tag)
+        print('Tag info : ',tag.info())
+        #print(api)
         for trending_video in api.trending.videos(count=50):
             # Prints the author's username of the trending video.
             print('trending : ',trending_video.author.username)
