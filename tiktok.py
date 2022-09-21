@@ -16,7 +16,7 @@ def get_data(hashtag):
     ls=[]
     with tiktok() as api:
         tag=api.hashtag(hashtag)
-        print('Api hashtag :', tag.as_dict())
+        print('Api hashtag :', tag.as_dict)
         print('Tag info : ',tag.info())
         
         print("tag.videos : ",tag.videos())
