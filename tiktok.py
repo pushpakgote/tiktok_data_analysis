@@ -19,7 +19,7 @@ def get_data(hashtag):
         print('Api hashtag :', tag.info_full())
         print('Tag info : ',tag.info())
         
-        print("tag.videos : ",tag.videos()[0] )
+        print("tag.videos : ",tag.videos(),len(tag.videos()) )
         for video in tag.videos():
             print('Video id : ',video.as_dict)
             first=video.as_dict
