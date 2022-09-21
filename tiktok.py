@@ -19,6 +19,7 @@ def get_data(hashtag):
             # Prints the author's username of the trending video.
             print('trending : ',trending_video.author.username)
             ls.append(trending_video.author.username)
+        print("Over")
     #ls.append(hashtag)
     
     #lines = ['Readme', 'How to write text files in Python']
