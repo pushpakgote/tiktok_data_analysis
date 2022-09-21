@@ -10,7 +10,7 @@ if st.button('Get Data'):
     #call(['python','tiktok.py',hashtag])
     with open('test.txt') as f:
         contents = f.read()
-    st.write(contents)
+    #st.write(contents)
     
     print('Print :',contents)
 
