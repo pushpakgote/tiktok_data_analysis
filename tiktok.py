@@ -27,7 +27,7 @@ def get_data(hashtag):
             #first=video.as_dict
             break
         
-        print('keys : ',video.as_dict.keys())
+        print('keys : ',video.as_dict)
         
         
         #print(api)
