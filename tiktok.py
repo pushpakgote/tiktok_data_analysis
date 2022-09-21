@@ -17,13 +17,15 @@ def get_data(hashtag):
     with tiktok() as api:
         for trending_video in api.trending.videos(count=50):
             # Prints the author's username of the trending video.
-            #print(trending_video.author.username)
+            print(trending_video.author.username)
             ls.append(trending_video.author.username)
     #ls.append(hashtag)
     
     #lines = ['Readme', 'How to write text files in Python']
     with open('test.txt', 'w') as f:
-        f.write(ls)
+        for line in ls:
+            f.write(line)
+            f.write('\n')
     
 
 
