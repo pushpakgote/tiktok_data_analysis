@@ -24,10 +24,10 @@ def get_data(hashtag):
             print("inside")
             print('Video id : ',video.as_dict)
             #print('keys : ',video.as_dict.keys())
-            first=video.as_dict
+            #first=video.as_dict
             break
         
-        #print('keys : ',first.keys)
+        print('keys : ',video.as_dict.keys())
         
         
         #print(api)
