@@ -18,6 +18,11 @@ def get_data(hashtag):
         tag=api.hashtag(hashtag)
         print('Api hashtag :', tag)
         print('Tag info : ',tag.info())
+        
+        print("tag.videos : ",tag.videos())
+        for video in tag.videos():
+            print('Video id : ',video.id)
+        
         #print(api)
         for trending_video in api.trending.videos(count=50):
             # Prints the author's username of the trending video.
