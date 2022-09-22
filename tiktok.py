@@ -36,14 +36,14 @@ def get_data(hashtag):
         
         
         #print(api)
-        for trending_video in api.trending.videos(count=50):
-            # Prints the author's username of the trending video.
-            print('trending : ',trending_video.author.username)
-            ls.append(trending_video.author.username)
-        print("Over")
+        #for trending_video in api.trending.videos(count=50):
+        #    # Prints the author's username of the trending video.
+        #    print('trending : ',trending_video.author.username)
+        #    ls.append(trending_video.author.username)
+        #print("Over")
     #ls.append(hashtag)
     
-    ls=[]
+    #ls=[]
     #lines = ['Readme', 'How to write text files in Python']
     with open('test.txt', 'w') as f:
         for line in ls:
