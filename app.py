@@ -7,7 +7,7 @@ st.download_button(
     label="Download JSON",
     file_name="data.json",
     mime="application/json",
-    data=Path("tiktok_json.json").read_text()
+    data=Path("tiktok_json.json").read_text(),
 )
 
 
