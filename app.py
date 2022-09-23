@@ -14,4 +14,10 @@ if st.button('Get Data'):
     
     print('Print :',contents)
 
+st.download_button(
+    label="Download data",
+    #data=csv,
+    file_name='tiktok_json.json'
+    #mime='text/csv',
+)
 
