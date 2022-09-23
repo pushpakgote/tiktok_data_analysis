@@ -34,6 +34,9 @@ def get_data(hashtag):
         print(len(ls))
         #print(ls)
         
+        with open("tiktok_json.json", "w") as outfile:
+            json.dump(ls, outfile)
+        
         
         #print(api)
         #for trending_video in api.trending.videos(count=50):
@@ -45,10 +48,10 @@ def get_data(hashtag):
     
     #ls=[]
     #lines = ['Readme', 'How to write text files in Python']
-    with open('test.txt', 'w') as f:
-        for line in ls:
-            f.write(line)
-            f.write('\n')
+    #with open('test.txt', 'w') as f:
+    #    for line in ls:
+    #        f.write(line)
+    #        f.write('\n')
     
 
 
