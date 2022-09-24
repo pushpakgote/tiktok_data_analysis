@@ -44,7 +44,7 @@ with st.sidebar:
 #st.sidebar.markdown(" <div> < img src='https://assets.stickpng.com/images/5cb78671a7c7755bf004c14b.png' width=100 /> <h1 style='display:inline-block'>TikTok Analytics</h1></div> ",unsafe_allow_html=True)
 st.sidebar.markdown("<div> <h1 style='display:inline-block;text-align:center;'>TikTok Analytics</h1> </div> ",unsafe_allow_html=True)
 st.sidebar.markdown("This dashboard allows you to analyze latest tiktok videos using Python and Streamlit")
-st.sidebar.markdown("Here's how it works : <ol><li> Enter <i>hashtag></i> you wish to analyze</li><li> Hit <i>Get Data</i> </li> <li> Analyze data with charts </li>",unsafe_allow_html=True)
+st.sidebar.markdown("Here's how it works : <ol><li>1. Enter <i>hashtag></i> you wish to analyze</li><li>2. Hit <i>Get Data</i> </li> <li>3. Analyze data with charts </li>",unsafe_allow_html=True)
 
 
 #input
