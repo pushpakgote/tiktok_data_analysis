@@ -46,9 +46,9 @@ st.sidebar.markdown("<div> <h1 style='display:inline-block;text-align:center;'>T
 st.sidebar.markdown("This dashboard allows you to analyze latest tiktok videos using Python and Streamlit")
 #st.sidebar.markdown("Here's how it works : <ol><li>1. Enter <i>hashtag></i> you wish to analyze</li><li>2. Hit <i>Get Data</i> </li> <li>3. Analyze data with charts </li>",unsafe_allow_html=True)
 st.sidebar.markdown("Here's how it works ",unsafe_allow_html=True)
-st.sidebar.markdown("1. Enter <i>hashtag></i> you wish to analyze",unsafe_allow_html=True)
-st.sidebar.markdown("2. Hit <i>Get Data</i> ",unsafe_allow_html=True)
-st.sidebar.markdown("3. Analyze data with charts",unsafe_allow_html=True)
+st.sidebar.markdown(" 1. Enter <i>hashtag></i> you wish to analyze",unsafe_allow_html=True)
+st.sidebar.markdown(" 2. Hit <i>Get Data</i> ",unsafe_allow_html=True)
+st.sidebar.markdown(" 3. Analyze data with charts",unsafe_allow_html=True)
 
 
 #input
