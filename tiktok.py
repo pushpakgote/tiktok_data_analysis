@@ -1,6 +1,9 @@
 from TikTokApi import TikTokApi as tiktok
 import json
 import sys
+import pandas as pd
+from helpers import process_result
+
 
 #Get cookie data
 #verifyFp=""
@@ -23,7 +26,7 @@ def get_data(hashtag):
         for video in tag.videos():
             print("inside")
             #print('Video id : ',video.author)
-            print('Video dict : ',video.as_dict)
+            #print('Video dict : ',video.as_dict)
             print(type(video.as_dict))
             ls.append(video.as_dict)
             #break
@@ -34,8 +37,8 @@ def get_data(hashtag):
         print(len(ls))
         #print(ls)
         
-        with open("tiktok_json.json", "w") as outfile:
-            json.dump(ls, outfile)
+        #with open("tiktok_json.json", "w") as outfile:
+        #    json.dump(ls, outfile)
         
         
         #print(api)
@@ -52,6 +55,10 @@ def get_data(hashtag):
     #    for line in ls:
     #        f.write(line)
     #        f.write('\n')
+    
+    data=process_result(ls)
+    data=pd.DataFrame(data)
+    data.to_csv('processed_tiktok.csv',index=False)
     
 
 

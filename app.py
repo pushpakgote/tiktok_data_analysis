@@ -1,6 +1,7 @@
 import streamlit as st
 from subprocess import call
 from pathlib import Path
+import pandas as pd
 
 #download
 st.download_button(
@@ -14,13 +15,17 @@ st.download_button(
 #input
 hashtag=st.text_input('Search hashtags . . .',value="")
 
-if st.button('Get Data'):
+if st.button('Get Data 1'):
     st.write(hashtag)
     call(hashtag.split(' '))
     #call(['python','tiktok.py',hashtag])
-    with open('test.txt') as f:
-        contents = f.read()
+    #with open('test.txt') as f:
+    #    contents = f.read()
     #st.write(contents)
     
-    print('Print :',contents)
+if st.button('Get Data'):
+    st.write(hashtag)
+    call(['python','tiktok.py',hashtag])
+    df=pd.read_csv('processed_tiktok.csv')
+    df
 
