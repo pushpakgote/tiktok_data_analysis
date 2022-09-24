@@ -45,6 +45,13 @@ if st.button('Get Data'):
     fig.update_layout( yaxis_title="Likes" )
     st.plotly_chart(fig,use_container_width=True)
     
+    #Split Columns
+    left_col,right_col=st.columns(2)
+    
+    #Left chart : Video stats
+    scatter1=px.scatter(df,x='stats_shareCount',y='stats_commentCount')
+    update_layout( xaxis_title="Shares",yaxis_title="Comments" )
+    left_col.plotly_chart(scatter1,use_container_width=True)
     
     #Show tabular data
     df
