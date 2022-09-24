@@ -13,7 +13,7 @@ st.download_button(
 
 
 #input
-hashtag1=st.text_input('Search hashtags . . .',value="")
+hashtag1=st.text_input('Search hashtags . . .',value="0")
 
 if st.button('Get Data 1'):
     st.write(hashtag1)
@@ -23,7 +23,7 @@ if st.button('Get Data 1'):
     #    contents = f.read()
     #st.write(contents)
     
-hashtag=st.text_input('Search hashtags . . .',value="")
+hashtag=st.text_input('Search hashtags . . .',value="1")
 
 if st.button('Get Data'):
     st.write(hashtag)
