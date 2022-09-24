@@ -41,7 +41,7 @@ if st.button('Get Data'):
     df[bool_cols]=df[bool_cols].astype('str') 
     
     #Plotting histogram
-    fig=px.histogram(df,x='desc',y='authorStats_diggCount')
+    fig=px.histogram(df,x='desc',y='authorStats_diggCount',hover_data=['desc'],height=300)
     fig.update_layout( yaxis_title="Likes" )
     st.plotly_chart(fig,use_container_width=True)
     
@@ -49,12 +49,12 @@ if st.button('Get Data'):
     left_col,right_col=st.columns(2)
     
     #Left chart : Video stats
-    scatter1=px.scatter(df,x='stats_shareCount',y='stats_commentCount')
+    scatter1=px.scatter(df,x='stats_shareCount',y='stats_commentCount',hover_data=['desc'],size='stats_playCount',color='stats_playCount')
     scatter1.update_layout( xaxis_title="Shares",yaxis_title="Comments" )
     left_col.plotly_chart(scatter1,use_container_width=True)
     
     #Left chart : Video stats
-    scatter2=px.scatter(df,x='authorStats_videoCount',y='authorStats_heartCount')
+    scatter2=px.scatter(df,x='authorStats_videoCount',y='authorStats_heartCount',hover_data=['author_nickname'],size='authorStats_followerCount',color='authorStats_followerCount')
     scatter2.update_layout( xaxis_title="Views",yaxis_title="Likes" )
     right_col.plotly_chart(scatter2,use_container_width=True)
     
