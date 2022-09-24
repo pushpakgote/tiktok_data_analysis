@@ -25,7 +25,7 @@ st.markdown(
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 50%;
+            width: 60%;
         }
         [data-testid=stSidebar]{
             text-align: center;
