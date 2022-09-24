@@ -12,6 +12,7 @@ import plotly.express as px
 #    data=Path("tiktok_json.json").read_text(),
 #)
 
+st.set_page_config(layout='wide')
 
 #input
 hashtag1=st.text_input('Search hashtags . . .',value="0")
