@@ -16,7 +16,8 @@ import plotly.express as px
 st.set_page_config(layout='wide')
 
 #Sidebar
-st.sidebar.markdown(" <div> < img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Ftech-companies%2Ftik-tok-icon-circle&psig=AOvVaw1tFRfuxIinkxyvTMEnMA78&ust=1664139838177000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCKj3mtCxrvoCFQAAAAAdAAAAABAD' width=100 /> <h1 style='display:inline-block'>TikTok Analytics</h1></div> ",unsafe_allow_html=True)
+#st.sidebar.markdown(" <div> < img src='https://assets.stickpng.com/images/5cb78671a7c7755bf004c14b.png' width=100 /> <h1 style='display:inline-block'>TikTok Analytics</h1></div> ",unsafe_allow_html=True)
+st.sidebar.markdown(" <div> < img src='tiktok.png' width=100 /> <h1 style='display:inline-block'>TikTok Analytics</h1></div> ",unsafe_allow_html=True)
 st.sidebar.markdown("This dashboard allows you to analyze latest tiktok videos using Python and Streamlit")
 st.sidebar.markdown("Here's how it works : <ol><li> Enter <i>hashtag></i> you wish to analyze</li><li> Hit <i>Get Data</i> </li> <li> Analyze data with charts </li>",unsafe_allow_html=True)
 
