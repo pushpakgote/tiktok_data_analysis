@@ -13,16 +13,18 @@ st.download_button(
 
 
 #input
-hashtag=st.text_input('Search hashtags . . .',value="")
+hashtag1=st.text_input('Search hashtags . . .',value="")
 
 if st.button('Get Data 1'):
-    st.write(hashtag)
-    call(hashtag.split(' '))
+    st.write(hashtag1)
+    call(hashtag1.split(' '))
     #call(['python','tiktok.py',hashtag])
     #with open('test.txt') as f:
     #    contents = f.read()
     #st.write(contents)
     
+hashtag=st.text_input('Search hashtags . . .',value="")
+
 if st.button('Get Data'):
     st.write(hashtag)
     call(['python','tiktok.py',hashtag])
