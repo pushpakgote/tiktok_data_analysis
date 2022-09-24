@@ -27,6 +27,13 @@ st.markdown(
             margin-right: auto;
             width: 50%;
         }
+        [data-testid=stSidebar]{
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
     </style>
     """, unsafe_allow_html=True
 )
