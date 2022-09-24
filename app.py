@@ -32,7 +32,7 @@ st.markdown(
 )
 
 with st.sidebar:
-    st.image("https://assets.stickpng.com/images/5cb78671a7c7755bf004c14b.png")
+    st.image("tiktok.png")
 
 #st.sidebar.markdown(" <div> < img src='https://assets.stickpng.com/images/5cb78671a7c7755bf004c14b.png' width=100 /> <h1 style='display:inline-block'>TikTok Analytics</h1></div> ",unsafe_allow_html=True)
 st.sidebar.markdown("<div> <h1 style='display:inline-block'>TikTok Analytics</h1> </div> ",unsafe_allow_html=True)
