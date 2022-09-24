@@ -16,6 +16,8 @@ import plotly.express as px
 st.set_page_config(layout='wide')
 
 #Sidebar
+st.sidebar.image("tiktok.png", use_column_width=True)
+
 #st.sidebar.markdown(" <div> < img src='https://assets.stickpng.com/images/5cb78671a7c7755bf004c14b.png' width=100 /> <h1 style='display:inline-block'>TikTok Analytics</h1></div> ",unsafe_allow_html=True)
 st.sidebar.markdown("<div> < img src='https://assets.stickpng.com/images/5cb78671a7c7755bf004c14b.png' > </div>",unsafe_allow_html=True)
 st.sidebar.markdown("This dashboard allows you to analyze latest tiktok videos using Python and Streamlit")
