@@ -36,6 +36,10 @@ def get_data(hashtag):
         
         print(len(ls))
         #print(ls)
+        data=process_result(ls)
+        data=pd.DataFrame(data)
+        data.to_csv('processed_tiktok.csv',index=False)
+    
         
         #with open("tiktok_json.json", "w") as outfile:
         #    json.dump(ls, outfile)
@@ -56,9 +60,9 @@ def get_data(hashtag):
     #        f.write(line)
     #        f.write('\n')
     
-    data=process_result(ls)
-    data=pd.DataFrame(data)
-    data.to_csv('processed_tiktok.csv',index=False)
+    #data=process_result(ls)
+    #data=pd.DataFrame(data)
+    #data.to_csv('processed_tiktok.csv',index=False)
     
 
 
