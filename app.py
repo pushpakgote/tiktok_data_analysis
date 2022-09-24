@@ -29,5 +29,10 @@ if st.button('Get Data'):
     st.write(hashtag)
     call(['python','tiktok.py',hashtag])
     df=pd.read_csv('processed_tiktok.csv')
+    
+    #Changing bool columns to string because on website bool columns appears as checkbox
+    bool_cols=[col for col in df.columns if df[col].dtype == 'bool']
+    df[bool_cols]=df[bool_cols].astype('str') 
+        
     df
 

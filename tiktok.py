@@ -39,10 +39,6 @@ def get_data(hashtag):
         data=process_result(ls)
         data=pd.DataFrame(data)
         
-        #Changing bool columns to string because on website bool columns appears as checkbox
-        bool_cols=[col for col in data.columns if data[col].dtype == 'bool']
-        data[bool_cols]=data[bool_cols].astype('str') 
-        
         #Exporting data to csv
         data.to_csv('processed_tiktok.csv',index=False)
     
