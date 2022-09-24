@@ -16,55 +16,29 @@ from helpers import process_result
 #print(trending)
 
 def get_data(hashtag):
-    ls=[]
+    video_data=[]
     with tiktok() as api:
         tag=api.hashtag(hashtag)
-        print('Api hashtag :', tag.info_full())
-        print('Tag info : ',tag.info())
+        #print('Api hashtag :', tag.info_full())
+        #print('Tag info : ',tag.info())
         
-        print("tag.videos : ",tag.videos()) 
+        #print("tag.videos : ",tag.videos()) 
         for video in tag.videos():
-            print("inside")
+            #print("inside")
             #print('Video id : ',video.author)
             #print('Video dict : ',video.as_dict)
-            print(type(video.as_dict))
-            ls.append(video.as_dict)
-            #break
-        
-        #print('keys : ',video.author,video.id)
-        #print(video.as_dict)
-        
-        print(len(ls))
-        #print(ls)
-        data=process_result(ls)
-        data=pd.DataFrame(data)
-        
-        #Exporting data to csv
-        data.to_csv('processed_tiktok.csv',index=False)
+            #print(type(video.as_dict))
+            video_data.append(video.as_dict)
+            
+
+    print(len(video_data))
     
-        
-        #with open("tiktok_json.json", "w") as outfile:
-        #    json.dump(ls, outfile)
-        
-        
-        #print(api)
-        #for trending_video in api.trending.videos(count=50):
-        #    # Prints the author's username of the trending video.
-        #    print('trending : ',trending_video.author.username)
-        #    ls.append(trending_video.author.username)
-        #print("Over")
-    #ls.append(hashtag)
-    
-    #ls=[]
-    #lines = ['Readme', 'How to write text files in Python']
-    #with open('test.txt', 'w') as f:
-    #    for line in ls:
-    #        f.write(line)
-    #        f.write('\n')
-    
-    #data=process_result(ls)
-    #data=pd.DataFrame(data)
-    #data.to_csv('processed_tiktok.csv',index=False)
+    #Processing data
+    data=process_result(video_data)
+
+    #Exporting data to csv
+    data=pd.DataFrame(data)
+    data.to_csv('processed_tiktok.csv',index=False)
     
 
 
