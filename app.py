@@ -50,7 +50,7 @@ if st.button('Get Data'):
     
     #Left chart : Video stats
     scatter1=px.scatter(df,x='stats_shareCount',y='stats_commentCount')
-    update_layout( xaxis_title="Shares",yaxis_title="Comments" )
+    scatter1.update_layout( xaxis_title="Shares",yaxis_title="Comments" )
     left_col.plotly_chart(scatter1,use_container_width=True)
     
     #Show tabular data
