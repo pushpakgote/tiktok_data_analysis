@@ -53,6 +53,11 @@ if st.button('Get Data'):
     scatter1.update_layout( xaxis_title="Shares",yaxis_title="Comments" )
     left_col.plotly_chart(scatter1,use_container_width=True)
     
+    #Left chart : Video stats
+    scatter2=px.scatter(df,x='authorStats_videoCount',y='authorStats_heartCount')
+    scatter2.update_layout( xaxis_title="Views",yaxis_title="Likes" )
+    right_col.plotly_chart(scatter2,use_container_width=True)
+    
     #Show tabular data
     df
 
