@@ -85,7 +85,7 @@ if st.button('Get Data'):
     #top_3_like_isto_views_score=[]
     #for i in range(df.shape[0]):
     top_3=pd.DataFrame()
-    top_3['tiktok_engagement_rate']=( df.stats_diggCount + stats_commentCount + stats_shareCount ) / df.stats_playCount *100
+    top_3['tiktok_engagement_rate']=( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100
     top_3['video_id']=df.video_id
     top_3=top_3.sort_values(by='likes_to_views',ascending=False).iloc[:3].reset_index(drop=True)
     
