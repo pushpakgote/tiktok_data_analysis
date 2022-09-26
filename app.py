@@ -100,11 +100,11 @@ if st.button('Get Data'):
     
     for i,col in enumerate(cols):
         col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )
+        col.write("Engagement rate : {}".format( (top_3.loc[i,'tiktok_engagement_rate']).values[0] ) )
         col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
         col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-        col.write("Views : {}\nLikes : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0],(df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-        #col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-        #col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+        col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )) 
+        col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
         col.write("Comments : {}".format( (df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
         col.write("Shares : {}".format( (df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
     
