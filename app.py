@@ -93,19 +93,19 @@ if st.button('Get Data'):
     top_3
     
     cols=st.columns(3)
-    for i,col in enumerate(cols):
-        col.write('Number = {}'.format(top_3.loc[i,'video_id']))
-        #nickname=df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]
-        col.write('Nickname = {}'.format( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ) )
-    
     #for i,col in enumerate(cols):
-    #    col.header(df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']])
-    #    col.write("Account (@) : {}".fomat(df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]))
-    #    col.write("Video description : {}".fomat(df['desc'][df['video_id']==top_3.loc[i,'video_id']]))
-    #    col.write("Views : {}".format(df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]))
-    #    col.write("Likes : {}".format(df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]))
-    #    col.write("Comments : {}".format(df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]))
-    #    col.write("Shares : {}".format(df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]))
+    #    col.write('Number = {}'.format(top_3.loc[i,'video_id']))
+    #    #nickname=df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]
+    #    col.write('Nickname = {}'.format( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ) )
+    
+    for i,col in enumerate(cols):
+        col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )
+        col.write("Account (@) : {}".fomat( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+        col.write("Video description : {}".fomat( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+        col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+        col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+        col.write("Comments : {}".format( (df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+        col.write("Shares : {}".format( (df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
     
     
     #Split Columns
