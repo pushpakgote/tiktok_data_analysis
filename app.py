@@ -94,8 +94,9 @@ if st.button('Get Data'):
     
     cols=st.columns(3)
     for i,col in enumerate(cols):
-        #col.write('Number = {}'.format(top_3.loc[i,'video_id']))
-        col.write('Number = {}'.format( df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']] ) )
+        col.write('Number = {}'.format(top_3.loc[i,'video_id']))
+        #nickname=df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]
+        col.write('Nickname = {}'.format( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ) )
     
     #for i,col in enumerate(cols):
     #    col.header(df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']])
