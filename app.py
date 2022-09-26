@@ -94,13 +94,16 @@ if st.button('Get Data'):
     
     cols=st.columns(3)
     for i,col in enumerate(cols):
-        col.header(df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']])
-        col.write("Account (@) : {}".fomat(df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]))
-        col.write("Video description : {}".fomat(df['desc'][df['video_id']==top_3.loc[i,'video_id']]))
-        col.write("Views : {}".format(df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]))
-        col.write("Likes : {}".format(df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]))
-        col.write("Comments : {}".format(df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]))
-        col.write("Shares : {}".format(df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]))
+        col.write('Number = {}'.format(i))
+    
+    #for i,col in enumerate(cols):
+    #    col.header(df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']])
+    #    col.write("Account (@) : {}".fomat(df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]))
+    #    col.write("Video description : {}".fomat(df['desc'][df['video_id']==top_3.loc[i,'video_id']]))
+    #    col.write("Views : {}".format(df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]))
+    #    col.write("Likes : {}".format(df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]))
+    #    col.write("Comments : {}".format(df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]))
+    #    col.write("Shares : {}".format(df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]))
     
     
     #Split Columns
