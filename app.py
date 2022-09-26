@@ -87,7 +87,7 @@ if st.button('Get Data'):
     top_3=pd.DataFrame()
     top_3['likes_to_views']=df.stats_diggCount / df.stats_playCount
     top_3['video_id']=df.video_id
-    top_3=top_3.sort_values(by='likes_to_views',ascending=False).iloc[:3]  
+    top_3=top_3.sort_values(by='likes_to_views',ascending=False).iloc[:3].reset_index(drop=True)
     
     #show in site
     top_3
