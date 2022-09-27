@@ -108,7 +108,7 @@ if st.button('Get Data'):
            
             if tab_index==0:
                 top_3=top_3_df.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True).iloc[:3]
-                y_axis_label='tiktok_engagement_rate (%)'
+                y_axis_label='tiktok_engagement_rate'
             elif tab_index==1:
                 top_3=top_3_df.sort_values(by='Likes',ascending=False).reset_index(drop=True).iloc[:3]
                 y_axis_label='Likes'
@@ -122,7 +122,12 @@ if st.button('Get Data'):
             
             #Plot bar graph
             fig=px.bar(top_3,x='username',y=y_axis_label,hover_data=['username'] )
-            fig.update_layout( xaxis_title='Username (@)',yaxis_title=tabs_name[tab_index] )
+            
+            if tab_index==0:
+                fig.update_layout( xaxis_title='Username (@)',yaxis_title=tabs_name[tab_index]+" (%)" )
+            else:
+                fig.update_layout( xaxis_title='Username (@)',yaxis_title=tabs_name[tab_index] )
+                
             st.plotly_chart(fig,use_container_width=True)
             
             
@@ -139,7 +144,7 @@ if st.button('Get Data'):
                 col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
                 col.write("Comments : {}".format( (df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
                 col.write("Shares : {}".format( (df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-                #col.write("Video ID : {}".format( (df['video_id'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+                col.write("Video ID : {}".format( (df['video_id'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
             
         
     #Split Columns
