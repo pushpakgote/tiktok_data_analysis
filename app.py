@@ -76,8 +76,14 @@ if st.button('Get Data'):
     df[bool_cols]=df[bool_cols].astype('str') 
     
     #Plotting histogram
-    fig=px.histogram(df,x='author_uniqueId',y='stats_diggCount',hover_data=['desc'],height=300)
-    fig.update_layout( xaxis_title="username (@)",yaxis_title="Likes" )
+    hist_df=pd.DataFrame()
+    hist_df['author_uniqueId']=df.author_uniqueId
+    hist_df['likes']=df.stats_diggCount
+    hist_df['description']=df.desc
+    hist_df['video_id']=df.video_id
+    
+    fig=px.histogram(hist_df,x='description',y='likes',hover_data=['author_uniqueId','desc'] )
+    fig.update_layout( xaxis_title="Description)",yaxis_title="Likes" )
     st.plotly_chart(fig,use_container_width=True)
     
     #Top 3 videos video_id

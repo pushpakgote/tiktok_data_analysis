@@ -31,7 +31,7 @@ def get_data(hashtag):
             video_data.append(video.as_dict)
             
 
-    print(len(video_data))
+    #print(len(video_data))
     
     #Processing data
     data=process_result(video_data)
