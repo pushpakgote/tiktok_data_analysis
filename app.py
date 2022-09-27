@@ -99,7 +99,8 @@ if st.button('Get Data'):
     top_3['username']=df.author_uniqueId
     top_3['video_id']=df.video_id
     #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).iloc[:3].reset_index(drop=True)
-    top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
+    top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True)
+    #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
     
     #show in site
     top_3
@@ -111,7 +112,7 @@ if st.button('Get Data'):
     #    col.write('Nickname = {}'.format( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ) )
     
     for i,col in enumerate(cols):
-        col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id'].values[0] ]) )
+        col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0]  )
         col.write("Engagement rate : {} %".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
         col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
         col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
