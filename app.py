@@ -207,4 +207,5 @@ if st.button('Get Data'):
     st.header("Processed Data")
     df
 
-st.write("Github Repository : [https://github.com/pushpakgote/tiktok_data_analysis](https://github.com/pushpakgote/tiktok_data_analysis)")
+st.write('')
+st.subheader("Github Repository : [https://github.com/pushpakgote/tiktok_data_analysis](https://github.com/pushpakgote/tiktok_data_analysis)")
