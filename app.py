@@ -96,6 +96,7 @@ if st.button('Get Data'):
     top_3=pd.DataFrame()
     top_3['tiktok_engagement_rate']=( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100
     #top_3['tiktok_engagement_rate']= df.stats_diggCount 
+    top_3['username']=df.author_uniqueId
     top_3['video_id']=df.video_id
     #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).iloc[:3].reset_index(drop=True)
     top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
