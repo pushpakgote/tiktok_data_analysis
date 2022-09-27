@@ -80,7 +80,6 @@ if st.button('Get Data'):
     hist_df['username']=df.author_uniqueId
     hist_df['likes']=df.stats_diggCount
     hist_df['description']=df.desc
-    hist_df['video_id']=df.video_id
     
     
     fig=px.bar(hist_df,x='description',y='likes',hover_data=['username'] )
@@ -89,38 +88,44 @@ if st.button('Get Data'):
     
     del hist_df
     
-    #Top 3 videos video_id
-    #top_3_video_id=[0,0,0]
-    #top_3_like_isto_views_score=[]
-    #for i in range(df.shape[0]):
-    top_3=pd.DataFrame()
-    top_3['tiktok_engagement_rate']=( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100
-    #top_3['tiktok_engagement_rate']= df.stats_diggCount 
-    top_3['username']=df.author_uniqueId
-    top_3['video_id']=df.video_id
-    #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).iloc[:3].reset_index(drop=True)
-    top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True)
-    #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
-    
-    #show in site
-    top_3
-    
-    cols=st.columns(3)
-    #for i,col in enumerate(cols):
-    #    col.write('Number = {}'.format(top_3.loc[i,'video_id']))
-    #    #nickname=df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]
-    #    col.write('Nickname = {}'.format( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ) )
-    
-    for i,col in enumerate(cols):
-        col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0]  )
-        col.write("Engagement rate : {} %".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
-        col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-        col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-        col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )) 
-        col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-        col.write("Comments : {}".format( (df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-        col.write("Shares : {}".format( (df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-    
+    #header
+    st.header("Top posts based on :")
+
+    #Tabs
+    tabs_name=["Engagement Rate", "Likes", "Views"]
+    tabs=st.tabs(tabs_name)
+    for tab_index,tab in enumerate(tabs):
+            
+        top_3=pd.DataFrame()
+        if tab_index==0:
+            top_3['tiktok_engagement_rate']=round( ( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100 ,3)
+        elif tab_index==1:
+            top_3['tiktok_engagement_rate']= df.stats_diggCount 
+        else:
+            top_3['tiktok_engagement_rate']= df.stats_playCount 
+            
+        top_3['username']=df.author_uniqueId
+        top_3['video_id']=df.video_id
+        #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).iloc[:3].reset_index(drop=True)
+        top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True)
+        #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
+        
+        #show in site
+        top_3
+        
+        #Columns
+        cols=st.columns(3)
+       
+        for i,col in enumerate(cols):
+            col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0]  )
+            col.write("Engagement rate : {} %".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
+            col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+            col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+            col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )) 
+            col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+            col.write("Comments : {}".format( (df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+            col.write("Shares : {}".format( (df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+        
     
     #Split Columns
     left_col,right_col=st.columns(2)
