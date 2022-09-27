@@ -75,7 +75,7 @@ if st.button('Get Data'):
     bool_cols=[col for col in df.columns if df[col].dtype == 'bool']
     df[bool_cols]=df[bool_cols].astype('str') 
     
-    #Plotting histogram
+    #Plotting bar graph
     hist_df=pd.DataFrame()
     hist_df['username']=df.author_uniqueId
     hist_df['likes']=df.stats_diggCount
@@ -91,26 +91,29 @@ if st.button('Get Data'):
     #header
     st.header("Top posts based on :")
 
+
+    top_3_df=pd.DataFrame()
+    top_3_df['tiktok_engagement_rate']=round( ( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100 ,3)
+    top_3_df['Likes']= df.stats_diggCount 
+    top_3_df['Views']= df.stats_playCount 
+    top_3_df['username']=df.author_uniqueId
+    top_3_df['video_id']=df.video_id
+    
     #Tabs
     tabs_name=["Engagement Rate", "Likes", "Views"]
     tabs=st.tabs(tabs_name)
+    
     for tab_index,tab in enumerate(tabs):
         with tab:
-            
-            top_3=pd.DataFrame()
+           
             if tab_index==0:
-                top_3['tiktok_engagement_rate']=round( ( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100 ,3)
+                top_3=top_3_df.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True)
             elif tab_index==1:
-                top_3['tiktok_engagement_rate']= df.stats_diggCount 
+                top_3=top_3_df.sort_values(by='Likes',ascending=False).reset_index(drop=True)
             else:
-                top_3['tiktok_engagement_rate']= df.stats_playCount 
+                top_3=top_3_df.sort_values(by='Views',ascending=False).reset_index(drop=True)
                 
-            top_3['username']=df.author_uniqueId
-            top_3['video_id']=df.video_id
-            #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).iloc[:3].reset_index(drop=True)
-            top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True)
-            #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
-            
+
             #show in site
             top_3
             
