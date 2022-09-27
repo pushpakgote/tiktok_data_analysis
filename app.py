@@ -139,7 +139,7 @@ if st.button('Get Data'):
                 col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
                 col.write("Comments : {}".format( (df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
                 col.write("Shares : {}".format( (df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-                col.write("Video ID : {}".format( (df['video_id'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+                #col.write("Video ID : {}".format( (df['video_id'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
             
         
     #Split Columns
