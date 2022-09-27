@@ -185,6 +185,8 @@ if st.button('Get Data'):
     right_col.plotly_chart(scatter2,use_container_width=True)
     
     del author
+    
     #Show tabular data
+    st.header("Processed Data")
     df
 
