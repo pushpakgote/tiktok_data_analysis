@@ -208,5 +208,5 @@ if st.button('Get Data'):
     df
 
 st.write('')
-st.text("Github **Repository** : [https://github.com/pushpakgote/tiktok_data_analysis](https://github.com/pushpakgote/tiktok_data_analysis)")
+st.markdown("Github **Repository** : [https://github.com/pushpakgote/tiktok_data_analysis](https://github.com/pushpakgote/tiktok_data_analysis)")
 st.text('Streamlit is **_really_ cool**.')
