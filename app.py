@@ -95,38 +95,39 @@ if st.button('Get Data'):
     tabs_name=["Engagement Rate", "Likes", "Views"]
     tabs=st.tabs(tabs_name)
     for tab_index,tab in enumerate(tabs):
+        with tab:
             
-        top_3=pd.DataFrame()
-        if tab_index==0:
-            top_3['tiktok_engagement_rate']=round( ( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100 ,3)
-        elif tab_index==1:
-            top_3['tiktok_engagement_rate']= df.stats_diggCount 
-        else:
-            top_3['tiktok_engagement_rate']= df.stats_playCount 
+            top_3=pd.DataFrame()
+            if tab_index==0:
+                top_3['tiktok_engagement_rate']=round( ( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100 ,3)
+            elif tab_index==1:
+                top_3['tiktok_engagement_rate']= df.stats_diggCount 
+            else:
+                top_3['tiktok_engagement_rate']= df.stats_playCount 
+                
+            top_3['username']=df.author_uniqueId
+            top_3['video_id']=df.video_id
+            #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).iloc[:3].reset_index(drop=True)
+            top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True)
+            #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
             
-        top_3['username']=df.author_uniqueId
-        top_3['video_id']=df.video_id
-        #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).iloc[:3].reset_index(drop=True)
-        top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True)
-        #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
+            #show in site
+            top_3
+            
+            #Columns
+            cols=st.columns(3)
         
-        #show in site
-        top_3
+            for i,col in enumerate(cols):
+                col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0]  )
+                col.write("Engagement rate : {} %".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
+                col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+                col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+                col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )) 
+                col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+                col.write("Comments : {}".format( (df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+                col.write("Shares : {}".format( (df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+            
         
-        #Columns
-        cols=st.columns(3)
-       
-        for i,col in enumerate(cols):
-            col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0]  )
-            col.write("Engagement rate : {} %".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
-            col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-            col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-            col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )) 
-            col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-            col.write("Comments : {}".format( (df['stats_commentCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-            col.write("Shares : {}".format( (df['stats_shareCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
-        
-    
     #Split Columns
     left_col,right_col=st.columns(2)
     
