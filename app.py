@@ -8,6 +8,7 @@ import plotly.express as px
 def install_packages():
     call(['pip','install','TikTokApi'])
     call(['playwright','install'])
+    call(['pip','install','pandas'])
 
 
 #download

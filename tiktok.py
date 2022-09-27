@@ -37,7 +37,7 @@ def get_data(hashtag):
     data=process_result(video_data)
 
     #Exporting data to csv
-    print('Exporting data')
+    #print('Exporting data')
     data=pd.DataFrame(data)
     data.to_csv('processed_tiktok.csv',index=False)
     
