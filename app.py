@@ -4,6 +4,12 @@ from pathlib import Path
 import pandas as pd
 import plotly.express as px
 
+
+def install_packages():
+    call(['pip','install','TikTokApi'])
+    call(['playwright','install'])
+
+
 #download
 #st.download_button(
 #    label="Download JSON",
@@ -64,6 +70,17 @@ hashtag=st.text_input('Search hashtags . . .',value="1")
 #Button
 if st.button('Get Data'):
     st.write(hashtag)
+    
+    #Check if packages are installed, if not then install them
+    f=open('packages_installed.txt','r')
+    pac_installed=f.read()
+    f.close()
+    if pac_installed==str(0):
+        install_packages()
+        f=open('packages_installed.txt','w')
+        f.write('1')
+        f.close()
+        
     
     #Running tiktok.py file to get data of givn hashtag
     call(['python','tiktok.py',hashtag])
