@@ -204,17 +204,22 @@ if st.button('Get Data'):
     
     del author
     
+    cols=st.columns(2)
+    
+    
     #Show Original data
     f=open("original_data.json",'r')
     original_data=json.load(f)
     f.close()
     
     #Display original JSON data 
-    st.json(original_data ,expanded=False)
+    cols[0].header("Original Data")
+    cols[0].json(original_data ,expanded=True)
     
     #Show tabular data
-    st.header("Processed Data")
-    df
+    cols[1].header("Processed Data")
+    cols[1].dataframe(df)
+  
 
 st.write('')
 st.markdown("**Github Repository : [https://github.com/pushpakgote/tiktok_data_analysis](https://github.com/pushpakgote/tiktok_data_analysis)**")
