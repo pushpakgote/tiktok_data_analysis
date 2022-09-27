@@ -111,7 +111,7 @@ if st.button('Get Data'):
     #    col.write('Nickname = {}'.format( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ) )
     
     for i,col in enumerate(cols):
-        col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]) )
+        col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id'].values[0] ]) )
         col.write("Engagement rate : {} %".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
         col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
         col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
