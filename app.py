@@ -209,4 +209,3 @@ if st.button('Get Data'):
 
 st.write('')
 st.markdown("**Github Repository : [https://github.com/pushpakgote/tiktok_data_analysis](https://github.com/pushpakgote/tiktok_data_analysis)**")
-st.text('Streamlit is **_really_ cool**.')
