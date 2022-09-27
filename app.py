@@ -151,6 +151,7 @@ if st.button('Get Data'):
     left_col,right_col=st.columns(2)
     
     #Left chart header
+    left_col.header("")
     left_col.header("Video Stats")
     
     #Left chart : Video stats
@@ -169,6 +170,7 @@ if st.button('Get Data'):
     del video
     
     #Right chart header
+    right_col.header("")
     right_col.header("User Stats")
     
     #Left chart : Video stats
