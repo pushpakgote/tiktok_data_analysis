@@ -66,7 +66,7 @@ st.sidebar.markdown("Here's how it works : <br>1. Enter <i>hashtag</i> you wish 
 #Title
 st.title("Tiktok Data Analysis")
 
-hashtag=st.text_input('Search hashtags . . .',value="1")
+hashtag=st.text_input('Search hashtags . . .',value="")
 
 #Button
 if st.button('Get Data'):
