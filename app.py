@@ -150,6 +150,9 @@ if st.button('Get Data'):
     #Split Columns
     left_col,right_col=st.columns(2)
     
+    #Left chart header
+    left_col.header("Video Stats")
+    
     #Left chart : Video stats
     video=pd.DataFrame()
     video['Views']=df.stats_playCount
@@ -165,18 +168,21 @@ if st.button('Get Data'):
     
     del video
     
+    #Right chart header
+    right_col.header("User Stats")
+    
     #Left chart : Video stats
     author=pd.DataFrame()
     author['Followers']=df.authorStats_followerCount
     author['Videos']=df.authorStats_videoCount
     author['Likes']=df.authorStats_heartCount
     author['username']=df.author_uniqueId
-    author['video_id']=df.video_id
     
-    scatter2=px.scatter(author,x='Videos',y='Followers',hover_data=['username','video_id'],size='Likes',color='Likes')
+    scatter2=px.scatter(author,x='Videos',y='Followers',hover_data=['username'],size='Likes',color='Likes')
     #scatter2.update_layout( xaxis_title="Views",yaxis_title="Likes" )
     right_col.plotly_chart(scatter2,use_container_width=True)
     
+    del author
     #Show tabular data
     df
 
