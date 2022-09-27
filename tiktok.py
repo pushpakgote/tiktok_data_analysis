@@ -31,8 +31,8 @@ def get_data(hashtag):
     #print(len(video_data))
     
     #Save original data
-    with open("original_data.json", "w") as outfile:
-        json.dump(video_data, outfile)
+    #with open("original_data.json", "w") as outfile:
+    #    json.dump(video_data, outfile)
 
     #Processing data
     data=process_result(video_data)

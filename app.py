@@ -204,21 +204,19 @@ if st.button('Get Data'):
     
     del author
     
-    cols=st.columns(2)
-    
-    
-    #Show Original data
-    f=open("original_data.json",'r')
-    original_data=json.load(f)
-    f.close()
-    
-    #Display original JSON data 
-    cols[0].header("Original Data")
-    cols[0].json(original_data ,expanded=True)
+    #cols=st.columns(2)
+    ##Show Original data
+    #f=open("original_data.json",'r')
+    #original_data=json.load(f)
+    #f.close()
+    #
+    ##Display original JSON data 
+    #cols[0].header("Original Data")
+    #cols[0].json(original_data ,expanded=True)
     
     #Show tabular data
-    cols[1].header("Processed Data")
-    cols[1].dataframe(df)
+    st.header("Processed Data")
+    st.dataframe(df)
   
 
 st.write('')
