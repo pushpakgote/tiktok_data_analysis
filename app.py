@@ -87,13 +87,15 @@ if st.button('Get Data'):
     fig.update_layout( xaxis_title="Description",yaxis_title="Likes" )
     st.plotly_chart(fig,use_container_width=True)
     
+    del hist_df
+    
     #Top 3 videos video_id
     #top_3_video_id=[0,0,0]
     #top_3_like_isto_views_score=[]
     #for i in range(df.shape[0]):
     top_3=pd.DataFrame()
-    #top_3['tiktok_engagement_rate']=( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100
-    top_3['tiktok_engagement_rate']= df.stats_diggCount 
+    top_3['tiktok_engagement_rate']=( df.stats_diggCount + df.stats_commentCount + df.stats_shareCount ) / df.stats_playCount *100
+    #top_3['tiktok_engagement_rate']= df.stats_diggCount 
     top_3['video_id']=df.video_id
     #top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False).iloc[:3].reset_index(drop=True)
     top_3=top_3.sort_values(by='tiktok_engagement_rate',ascending=False)
@@ -109,7 +111,7 @@ if st.button('Get Data'):
     
     for i,col in enumerate(cols):
         col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )
-        col.write("Engagement rate : {}".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
+        col.write("Engagement rate : {} %".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
         col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
         col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
         col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )) 
