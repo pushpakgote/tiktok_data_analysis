@@ -210,7 +210,7 @@ if st.button('Get Data'):
     f.close()
     
     #Display original JSON data 
-    original_data
+    st.json(original_data ,expanded=False)
     
     #Show tabular data
     st.header("Processed Data")
