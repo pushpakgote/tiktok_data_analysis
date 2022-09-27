@@ -151,13 +151,29 @@ if st.button('Get Data'):
     left_col,right_col=st.columns(2)
     
     #Left chart : Video stats
-    scatter1=px.scatter(df,x='stats_shareCount',y='stats_commentCount',hover_data=['desc'],size='stats_playCount',color='stats_playCount')
-    scatter1.update_layout( xaxis_title="Shares",yaxis_title="Comments" ,zaxis_title="Views")
+    video=pd.DataFrame()
+    video['Views']=df.stats_playCount
+    video['Comments']=df.stats_commentCount
+    video['Likes']=df.stats_diggCount
+    video['username']=df.author_uniqueId
+    video['video_id']=df.video_id
+    
+    
+    scatter1=px.scatter(video,x='Comments',y='Likes',hover_data=['username','video_id'],size='Views',color='Views')
+    #scatter1.update_layout( xaxis_title="Shares",yaxis_title="Comments" )
     left_col.plotly_chart(scatter1,use_container_width=True)
     
+    del video
+    
     #Left chart : Video stats
-    scatter2=px.scatter(df,x='authorStats_videoCount',y='authorStats_heartCount',hover_data=['author_nickname'],size='authorStats_followerCount',color='authorStats_followerCount')
-    scatter2.update_layout( xaxis_title="Views",yaxis_title="Likes" )
+    author['Followers']=df.authorStats_followerCount
+    author['Videos']=df.authorStats_videoCount
+    author['Likes']=df.authorStats_heartCount
+    author['username']=df.author_uniqueId
+    author['video_id']=df.video_id
+    
+    scatter2=px.scatter(author,x='Videos',y='Followers',hover_data=['username','video_id'],size='Likes',color='Likes')
+    #scatter2.update_layout( xaxis_title="Views",yaxis_title="Likes" )
     right_col.plotly_chart(scatter2,use_container_width=True)
     
     #Show tabular data
