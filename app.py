@@ -208,4 +208,4 @@ if st.button('Get Data'):
     df
 
 st.write('')
-st.subheader("Github Repository : [https://github.com/pushpakgote/tiktok_data_analysis](https://github.com/pushpakgote/tiktok_data_analysis)")
+st.text("Github **_Repository** : [https://github.com/pushpakgote/tiktok_data_analysis](https://github.com/pushpakgote/tiktok_data_analysis)")
