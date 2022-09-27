@@ -166,6 +166,7 @@ if st.button('Get Data'):
     del video
     
     #Left chart : Video stats
+    author=pd.DataFrame()
     author['Followers']=df.authorStats_followerCount
     author['Videos']=df.authorStats_videoCount
     author['Likes']=df.authorStats_heartCount
