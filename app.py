@@ -3,6 +3,7 @@ from subprocess import call
 from pathlib import Path
 import pandas as pd
 import plotly.express as px
+import json
 
 
 def install_packages():
@@ -202,6 +203,14 @@ if st.button('Get Data'):
     right_col.plotly_chart(scatter2,use_container_width=True)
     
     del author
+    
+    #Show Original data
+    f=open("original_data.json",'r')
+    original_data=json.load(f)
+    f.close()
+    
+    #Display original JSON data 
+    original_data
     
     #Show tabular data
     st.header("Processed Data")
