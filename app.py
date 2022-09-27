@@ -107,23 +107,33 @@ if st.button('Get Data'):
         with tab:
            
             if tab_index==0:
-                top_3=top_3_df.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True)
+                top_3=top_3_df.sort_values(by='tiktok_engagement_rate',ascending=False).reset_index(drop=True).iloc[:3]
+                y_axis_label='tiktok_engagement_rate'
             elif tab_index==1:
-                top_3=top_3_df.sort_values(by='Likes',ascending=False).reset_index(drop=True)
+                top_3=top_3_df.sort_values(by='Likes',ascending=False).reset_index(drop=True).iloc[:3]
+                y_axis_label='Likes'
             else:
-                top_3=top_3_df.sort_values(by='Views',ascending=False).reset_index(drop=True)
+                top_3=top_3_df.sort_values(by='Views',ascending=False).reset_index(drop=True).iloc[:3]
+                y_axis_label='Views'
                 
 
             #show in site
-            top_3
+            #top_3
+            
+            #Plot bar graph
+            fig=px.bar(top_3,x='username',y=y_axis_label,hover_data=['username'] )
+            fig.update_layout( xaxis_title='Username (@)',yaxis_title=tabs_name[tab_index] )
+            st.plotly_chart(fig,use_container_width=True)
+            
             
             #Columns
-            cols=st.columns(3)
+            cols=st.columns(3) 
         
             for i,col in enumerate(cols):
                 col.header( (df['author_nickname'][df['video_id']==top_3.loc[i,'video_id']]).values[0]  )
                 col.write("username (@) : {}".format( (df['author_uniqueId'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
                 col.write("Video description : {}".format( (df['desc'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
+                col.write("Followers : {}".format( (df['authorStats_followerCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )) 
                 col.write("Engagement rate : {} %".format( top_3.loc[i,'tiktok_engagement_rate'] ) )
                 col.write("Views : {}".format( (df['stats_playCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] )) 
                 col.write("Likes : {}".format( (df['stats_diggCount'][df['video_id']==top_3.loc[i,'video_id']]).values[0] ))
