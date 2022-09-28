@@ -3,7 +3,7 @@
 
 You can use this projects to get useful insights from 
 tiktok for given hashtags.  
-Visit: ![https://pushpakgote.github.io/tiktok_data_analysis/](https://pushpakgote.github.io/tiktok_data_analysis/)
+Visit: <a>https://pushpakgote.github.io/tiktok_data_analysis/</a>
 
 Ex:  For any hashtag you search for, this project scrapes latest
 videos using TiktokApi , after which the scraped data is processed and 
