@@ -14,7 +14,7 @@ engagement rate , likes and views, and much more.
 
 ## Demo
 
-Insert gif or link to demo
+![](https://github.com/pushpakgote/tiktok_data_analysis/blob/main/tiktok_analysis_gif%20(1).gif)
 
 
 ## 🔗 Links
