@@ -10,6 +10,7 @@ def install_packages():
     call(['pip','install','TikTokApi'])
     call(['playwright','install'])
     call(['pip','install','pandas'])
+    call(['sudo','playwright','install-deps'])
 
 
 #download
