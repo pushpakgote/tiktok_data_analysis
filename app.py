@@ -10,7 +10,7 @@ import os
 def install_packages():
     call(['pip','install','TikTokApi'])
     call(['playwright','install'])
-    call(['playwright','install-deps'])
+    #call(['playwright','install-deps'])
     #call("playwright install-deps", shell=True)
     call(['pip','install','pandas'])
     #os.system()
