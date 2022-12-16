@@ -1,3 +1,4 @@
+libevent-2.1-7
 libsoup2.4-1
 libgtk-3-0
 libcairo2
