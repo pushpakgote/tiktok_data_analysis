@@ -10,11 +10,11 @@ import os
 def install_packages():
     call(['pip','install','TikTokApi'])
     call(['playwright','install'])
+    call(['playwright','install-deps'])
+    #call("playwright install-deps", shell=True)
     call(['pip','install','pandas'])
     #os.system()
-    call("playwright install-deps", shell=True)
-    #call(['sudo','playwright','install-deps'])
-
+    
 
 #download
 #st.download_button(
