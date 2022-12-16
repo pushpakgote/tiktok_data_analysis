@@ -16,15 +16,15 @@ def get_data(hashtag):
     video_data=[]
     with tiktok() as api:
         tag=api.hashtag(hashtag)
-        #print('Api hashtag :', tag.info_full())
-        #print('Tag info : ',tag.info())
+        print('Api hashtag :', tag.info_full())
+        print('Tag info : ',tag.info())
         
         #print("tag.videos : ",tag.videos()) 
         for video in tag.videos():
             #print("inside")
             #print('Video id : ',video.author)
             #print('Video dict : ',video.as_dict)
-            #print(type(video.as_dict))
+            print(type(video.as_dict))
             video_data.append(video.as_dict)
             
 
