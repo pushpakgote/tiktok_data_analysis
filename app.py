@@ -12,7 +12,7 @@ def install_packages():
     call(['playwright','install'])
     call(['pip','install','pandas'])
     #os.system()
-    call("sudo playwright install-deps", shell=True)
+    call("playwright install-deps", shell=True)
     #call(['sudo','playwright','install-deps'])
 
 
