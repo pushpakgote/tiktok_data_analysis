@@ -4,13 +4,16 @@ from pathlib import Path
 import pandas as pd
 import plotly.express as px
 import json
+import os
 
 
 def install_packages():
     call(['pip','install','TikTokApi'])
     call(['playwright','install'])
     call(['pip','install','pandas'])
-    call(['sudo','playwright','install-deps'])
+    #os.system()
+    call("sudo playwright install-deps", shell=True)
+    #call(['sudo','playwright','install-deps'])
 
 
 #download
