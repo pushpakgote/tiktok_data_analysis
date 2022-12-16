@@ -28,7 +28,7 @@ def get_data(hashtag):
             video_data.append(video.as_dict)
             
 
-    #print(len(video_data))
+    print(len(video_data))
     
     #Save original data
     #with open("original_data.json", "w") as outfile:
