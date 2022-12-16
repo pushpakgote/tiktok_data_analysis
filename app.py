@@ -65,7 +65,8 @@ hashtag1=st.text_input('Search hashtags . . .',value="0")
 
 if st.button('Get Data 1'):
     st.write(hashtag1)
-    call(hashtag1.split(' '))
+    call(hashtag1, shell=True)
+    #call(hashtag1.split(' '))
 
 #Title
 st.title("Tiktok Data Analysis")
