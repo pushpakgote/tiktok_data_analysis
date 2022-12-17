@@ -5,7 +5,7 @@ print("inside test.py")
 with TikTokApi() as api:
     print("inside 1st loop")
     #for trending_video in api.trending.videos(count=20):
-    for trending_video in api.hashtag("hello"):
-        print("inside 2nd loop")
-        # Prints the author's username of the trending video.
-        print(trending_video)
+    tag=api.hashtag("hello")
+    print("videos: ",tag.videos())
+    print("dict: ",tag.as_dict)
+    print(tag)
