@@ -1,5 +1,5 @@
 
-## streamlit website is down as api got some issues, it will be live as soon as issue is fixed
+## Streamlit website is down as api got some issues, it will be live as soon as issue is fixed
 
 # Tiktok Data Analysis
 
